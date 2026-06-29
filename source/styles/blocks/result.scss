@@ -1,0 +1,105 @@
+.result {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: calc($max-width-tablet - 1px)) {
+    gap: 22px 32px;
+  }
+
+  @media (min-width: $max-width-tablet) {
+    gap: 43px;
+  }
+
+  @media (min-width: $max-width-desktop) {
+    gap: 39px 43px;
+  }
+}
+
+.result__block {
+  position: relative;
+  margin-top: 0;
+  padding: 14px;
+  width: 124px;
+  border: 1px solid $color-grey-7;
+  border-radius: 3px;
+  font-family: $font-family-primary;
+  font-size: $font-size-small;
+  font-weight: 400;
+  color: $color-base;
+  line-height: $line-height-result;
+  text-align: center;
+
+  @media (min-width: $max-width-tablet) {
+    padding-bottom: 20px;
+    width: 162px;
+    font-size: $font-size-base;
+    line-height: $line-height-extra-small;
+  }
+}
+
+.result__accent {
+  font-family: $font-family-accent;
+  font-size: $font-size-extra-large;
+  font-weight: 400;
+  color: $color-black;
+  line-height: $line-height-large;
+  text-transform: uppercase;
+
+  @media (min-width: $max-width-tablet) {
+    font-size: $font-size-large-accent;
+    line-height: $line-height-extra-large;
+  }
+}
+
+.result__description {
+  position: absolute;
+  bottom: -15px;
+  display: block;
+  padding: 0 15px;
+  width: 89px;
+  background-color: $color-grey-2;
+
+  @media (min-width: $max-width-tablet) {
+    left: 7px;
+    bottom: -6px;
+    padding: 0;
+    width: 90%;
+    background-color: $color-white;
+  }
+
+  @media (min-width: $max-width-desktop) {
+    background-color: $color-grey-2;
+  }
+}
+
+.result__expenses {
+  margin-top: 0;
+  width: 100%;
+  font-family: $font-family-accent;
+  font-size: $font-size-base;
+  line-height: $line-height-medium;
+  font-weight: 400;
+  color: $color-black;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: $max-width-tablet) {
+    margin-left: auto;
+    width: 175px;
+    font-size: $font-size-large;
+    line-height: $line-height-extra-large;
+    text-align: right;
+  }
+
+  @media (min-width: $max-width-desktop) {
+    margin: 0 auto;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.result__expenses-accent {
+  @media (min-width: $max-width-desktop) {
+    margin-left: 63px;
+  }
+}

@@ -1,0 +1,115 @@
+.advantages {
+  padding-bottom: 49px;
+
+  @media (min-width: $max-width-tablet) {
+    padding-top: 13px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: $max-width-desktop) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.advantages__title {
+  margin-bottom: 40px;
+  font-size: $font-size-title;
+  color: $color-black;
+  line-height: $line-height-title;
+
+  @media (min-width: $max-width-tablet) {
+    margin-bottom: 72px;
+    font-size: $font-size-tablet-extra-large;
+    line-height: $line-height-tablet-extra-large;
+  }
+}
+
+.advantages__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @media (min-width: $max-width-tablet) {
+    gap: 90px 135px;
+    counter-reset: item;
+  }
+
+  @media (min-width: $max-width-desktop) {
+    gap: 80px;
+  }
+}
+
+.advantages__item {
+  position: relative;
+  padding-left: 80px;
+  min-height: 60px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media (min-width: $max-width-tablet) {
+      position: static;
+      margin-bottom: 31px;
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &--first::before {
+    background-image: url("../../icons/stack.svg#advantages-first");
+  }
+
+  &--second::before {
+    background-image: url("../../icons/stack.svg#advantages-second");
+  }
+
+  &--third::before {
+    background-image: url("../../icons/stack.svg#advantages-third");
+  }
+
+  &--fourth::before {
+    background-image: url("../../icons/stack.svg#advantages-fourth");
+  }
+
+  @media (min-width: $max-width-tablet) {
+    padding-left: 0;
+    width: calc(50% - 105px);
+    min-height: 227px;
+    font-size: $font-size-medium;
+    line-height: $line-height-large;
+
+    &::after {
+      content: counter(item);
+      counter-increment: item;
+      position: absolute;
+      top: -40px;
+      left: 115px;
+      z-index: -1;
+      font-family: $font-family-accent;
+      font-size: $font-size-mega-large;
+      line-height: $line-height-mega-large;
+      color: $color-grey-1;
+    }
+  }
+
+  @media (min-width: $max-width-desktop) {
+    width: calc(25% - 60px);
+    min-height: 280px;
+  }
+}
+
+.advantages__item br {
+  display: none;
+
+  @media (min-width: $max-width-tablet) {
+    display: unset;
+  }
+}

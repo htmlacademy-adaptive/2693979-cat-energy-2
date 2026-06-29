@@ -1,0 +1,43 @@
+.button {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  font-family: $font-family-accent;
+  font-size: $font-size-medium;
+  font-weight: 400;
+  color: $color-white;
+  line-height: $line-height-medium;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: $color-accent;
+  cursor: pointer;
+  border: none;
+
+  &--accent {
+    color: $color-base;
+    background-color: $color-grey-1;
+  }
+
+  &--big {
+    padding: 15px;
+    font-size: $font-size-large;
+    line-height: $line-height-button-big;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-accent-pressed;
+  }
+
+  &:active {
+    color: $color-white-focus;
+  }
+
+  &--accent:hover,
+  &--accent:focus,
+  &--accent:active {
+    background-color: $color-grey-8;
+    color: $color-base;
+  }
+}

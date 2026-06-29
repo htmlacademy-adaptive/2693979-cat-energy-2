@@ -1,1 +1,84 @@
-/* здесь используйте глобальные селекторы img, body, html и так далее */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-base;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.title,
+.title-accent {
+  margin-top: 0;
+  font-family: $font-family-accent;
+  font-weight: 400;
+}
+
+.title-accent {
+  width: fit-content;
+  background-color: $color-white;
+  box-shadow:
+    -35px 0 0 0 $color-white,
+    35px 0 0 0 $color-white;
+
+  @media (min-width: $max-width-tablet) {
+    margin-left: 40px;
+    box-shadow:
+      -40px 0 0 0 $color-white,
+      40px 0 0 0 $color-white;
+  }
+
+  @media (min-width: $max-width-desktop) {
+    margin-left: 0;
+  }
+}
+
+.title-accent::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  display: block;
+  margin-top: 10px;
+  width: 100vw;
+  height: 2px;
+  background-color: $color-accent;
+  box-shadow: 100vw 0 0 0 $color-accent;
+  z-index: -1;
+
+  @media (min-width: $max-width-tablet) {
+    margin-top: 14px;
+  }
+
+  @media (min-width: $max-width-desktop) {
+    margin-top: 17px;
+  }
+}
